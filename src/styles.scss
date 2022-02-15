@@ -18,7 +18,7 @@ body {
 }
 
 main {
-    width: rem-calc(1000);
+    max-width: rem-calc(1000);
     min-height: 100vh;
     margin: 0 auto;
     box-sizing: border-box;
