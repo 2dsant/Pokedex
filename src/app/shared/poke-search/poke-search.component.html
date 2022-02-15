@@ -1,0 +1,4 @@
+<section>
+    <input type="text" #input (keyup.enter)="search(input.value)" placeholder="Nome ou Id do pokémon...">
+    <img (click)="search(input.value)" src="assets/icons/search.svg" alt="Buscar Pokemon">
+</section>

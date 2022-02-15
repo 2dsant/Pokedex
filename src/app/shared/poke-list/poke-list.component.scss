@@ -1,0 +1,182 @@
+@import "../../../config-scss/rem-calc.scss";
+@import "../../../config-scss/animation.scss";
+
+:host {
+    .listagem {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 10px;
+        
+        .loading {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            border: 3px solid black;
+            border-radius: 20px;
+        }
+        .pokemon {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            text-decoration: none;
+            color: var(--primary-color);
+            width: 31%;
+            min-width: rem-calc(300);
+            height: rem-calc(500);
+            margin: 10px;
+            border-radius: 32px;
+            box-shadow: 3px 5px 11px 0px #4e4e4e;
+
+            &__image img {
+                max-width: 300px;
+                position: relative;
+                top: 50px;
+            }
+
+            &__type {
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: row;
+                align-items: flex-start;
+            }
+
+            &__type li {
+                padding: rem-calc(10);
+                background-color: white;
+                border-radius: rem-calc(20);
+                margin: rem-calc(8);
+            }
+
+            &__status {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                background-color: rgb(255, 255, 255);
+                width: 100%;
+                height: rem-calc(500);
+                border-radius: 32px;
+
+                h2,
+                ul {
+                    position: relative;
+                    top: 50px;
+                }
+
+                h2 {
+                    font-size: rem-calc(22);
+                    font-weight: 400;
+                    text-transform: capitalize;
+                    color: var(--primary-color);
+
+                    margin-bottom: rem-calc(10);
+                }
+            }
+        }
+
+        .pokemon:hover {
+            animation: pulse 0.5s linear;
+        }
+        
+        .bug {
+            background-color: #92bc2c;
+            color: #92bc2c;
+        }
+
+        .dark {
+            background-color: #595761;
+            color: #595761;
+        }
+
+        .dragon {
+            background-color: #0c69c8;
+            color: #0c69c8;
+        }
+
+        .electric {
+            background-color: #f2d94e;
+            color: #f2d94e;
+        }
+
+        .fire {
+            background-color: #fba54c;
+            color: #fba54c;
+        }
+
+        .fairy {
+            background-color: #ee90e6;
+            color: #ee90e6;
+        }
+
+        .fighting {
+            background-color: #d3425f;
+            color: #d3425f;
+        }
+
+        .flying {
+            background-color: #a1bbec;
+            color: #a1bbec;
+        }
+
+        .ghost {
+            background-color: #5f6dbc;
+            color: #5f6dbc;
+        }
+
+        .grass {
+            background-color: #5fbd58;
+            color: #5fbd58;
+        }
+
+        .ground {
+            background-color: #da7c4d;
+            color: #da7c4d;
+        }
+
+        .ice {
+            background-color: #75d0c1;
+            color: #75d0c1;
+        }
+
+        .normal {
+            background-color: #a0a29f;
+            color: #a0a29f;
+        }
+
+        .poison {
+            background-color: #b763cf;
+            color: #b763cf;
+        }
+
+        .psychic {
+            background-color: #fa8581;
+            color: #fa8581;
+        }
+
+        .rock {
+            background-color: #c9bb8a;
+            color: #c9bb8a;
+        }
+
+        .steel {
+            background-color: #5695a3;
+            color: #5695a3;
+        }
+
+        .water {
+            background-color: #539ddf;
+            color: #539ddf;
+        }
+    }
+
+    pagination-controls {
+        text-align: center;
+        margin: rem-calc(50);
+    }
+}

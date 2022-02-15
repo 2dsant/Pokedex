@@ -1,0 +1,107 @@
+@import "../../../config-scss/rem-calc.scss";
+@import "../../../config-scss/animation.scss";
+
+:host {
+    main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .loading {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            border: 3px solid black;
+            border-radius: 20px;
+        }
+        .pokemon {
+            display: flex;
+            position: relative;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            background-color: white;
+            width: rem-calc(600);
+            height: 100%;
+            border-radius: 32px 20px;
+            border: 1px solid black;
+            box-shadow: 5px 5px 10px 0px #3a3a3a;
+            padding: 30px;
+            &__img {
+                position: absolute;
+                top: -250px;
+                margin-bottom: 10px;
+                img {
+                    width: rem-calc(300);
+                }
+            }
+
+            &__nome {
+                margin-top: 100px;
+                h1 {
+                    font-size: 48px;
+                    color: #3a3a3a;
+                }
+
+                h2 {
+                    position: absolute;
+                    font-weight: 100;
+                    top: 92px;
+                    right: 85px;
+                    font-size: rem-calc(60);
+                    color: rgba(3, 3, 3, 0.288);
+                }
+            }
+
+            &__status {
+                padding: 10px;
+                margin-top: 10px;
+                width: 100%;
+
+                li {
+                    display: grid;
+                    grid-template-columns: 2fr 1fr 4fr;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin: 2px;
+                    font-family: "Montserrat", sans-serif;
+                    font-weight: 500;
+                    color: #3a3a3a;
+                }
+
+                .status__barra {
+                    display: inline-block;
+                    height: rem-calc(5);
+                    border-radius: 20px;
+                    width: 100%;
+                    background-color: #c9c9c9;
+                    box-sizing: border-box;
+                    
+                    div {
+                        background-color: #27e39e;
+                        height: rem-calc(5);
+                        border-radius: 20px;
+                    }
+                }
+            }
+
+            &__btn {
+                width: 100%;
+                text-align: center;
+                border-radius: 15px;
+                border: 1px solid black;
+                text-transform: uppercase;
+                font-family: "Montserrat", sans-serif;
+                text-decoration: none;
+                color: white;
+                background: red;
+                padding: rem-calc(15);
+            }
+
+            &__btn:hover {
+                background: rgb(255, 99, 99);
+            }
+        }
+    }
+}

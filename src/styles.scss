@@ -1,1 +1,25 @@
-/* You can add global styles to this file, and also import other style files */
+@import './config-scss/variables.scss';
+@import './config-scss/reset.scss';
+@import './config-scss/rem-calc.scss';
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: url('./assets/bg/bgpokemon.svg') no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+main {
+    width: rem-calc(1000);
+    min-height: 100vh;
+    margin: 0 auto;
+    box-sizing: border-box;
+}

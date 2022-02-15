@@ -1,0 +1,44 @@
+<!-- search -->
+<poke-search (emmitSearch)="getSearch($event)"></poke-search>
+
+<section class="listagem fadeIn">
+    <ng-template [ngIf]="isLoading">
+        <div class="loading">
+            <img src="../../../assets/dayo3ow-7ac86c31-8b2b-4810-89f2-e6134caf1f2d.gif" width="250px" height="250px"
+                alt="Carregando">
+            <p>Carregando...</p>
+        </div>
+    </ng-template>
+
+    <ng-template [ngIf]="!isLoading">
+        <ng-template ngFor let-pokemon
+            [ngForOf]="getAllPokemons | paginate: { itemsPerPage: 12, currentPage: pageAtual, totalItems: totalPokemons }">
+            <a [routerLink]="['details', pokemon.status.id]"
+                [ngClass]="['pokemon',  pokemon.status.types[0].type.name ]" *ngIf="pokemon.status">
+                <section>
+                    <ul class="pokemon__type">
+                        <li *ngFor="let value of pokemon.status.types">
+                            {{ value.type.name }}
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="pokemon__image">
+                    <img [src]="pokemon.status.sprites.other.home.front_default != null ? pokemon.status.sprites.other.home.front_default : 'assets/no-image.png'"
+                        [alt]="pokemon.name">
+                </section>
+
+                <section class="pokemon__status">
+                    <h2>
+                        {{ pokemon.status.id }}. {{ pokemon.name }}
+                    </h2>
+                </section>
+            </a>
+        </ng-template>
+    </ng-template>
+
+    <img src="assets/error.png" alt="Deu erro na mostragem do pokemon" width="100%" *ngIf="apiError">
+</section>
+
+<pagination-controls class="my-pagination" (pageChange)="pageAtual = $event; getAllPokemons = []; getPokemons()">
+</pagination-controls>

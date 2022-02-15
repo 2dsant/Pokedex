@@ -1,0 +1,54 @@
+<!-- header -->
+<poke-header></poke-header>
+
+<main>
+    <ng-template [ngIf]="isLoading">
+        <div class="loading">
+            <img src="../../../assets/dayo3ow-7ac86c31-8b2b-4810-89f2-e6134caf1f2d.gif" width="250px" height="250px" alt="Carregando">
+            <p>Carregando...</p>
+        </div>
+    </ng-template>
+
+    <ng-template [ngIf]="!isLoading">
+        <section class="pokemon">
+            <section class="pokemon__img slideInDown">
+                <img [src]="pokemon[0].sprites.other.home.front_default" [alt]="pokemon[0].name" class="slideInDown">
+            </section>
+            <section class="pokemon__nome">
+                <h1 class="slideInLeft">{{ pokemon[0].name | titlecase }}</h1>
+                <h2 class="slideInRight">{{pokemon[1].names[0].name }}</h2>
+            </section>
+            <section class="pokemon__status fadeIn">
+                <!-- <table>
+                <tr *ngFor="let value of pokemon[0].stats">
+                    <td>{{ value.stat.name }}</td>
+                    <td>{{ value.base_stat }}</td>
+                    <td [ngStyle]="{'width': value.base_stat + '%' }">
+                        <div class="status__barra"></div>
+                    </td>
+                </tr>
+            </table> -->
+                <ol>
+                    <li *ngFor="let value of pokemon[0].stats">
+                        <p>{{ value.stat.name | titlecase }}</p>
+                        <p>{{ value.base_stat }}</p>
+                        <div class="status__barra">
+                            <div [ngStyle]="{'width': value.base_stat < 100 ? value.base_stat + '%' : '100%' }">
+                            </div>
+                        </div>
+                    </li>
+                </ol>
+            </section>
+
+            <a [routerLink]="['']" class="pokemon__btn fadeIn">Voltar</a>
+        </section>
+    </ng-template>
+    <img
+    src="assets/error.png"
+    alt="Deu erro na mostragem do pokemon"
+    width="100%"
+    *ngIf="apiError"
+    >
+</main>
+
+<app-footer></app-footer>

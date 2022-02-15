@@ -1,0 +1,42 @@
+@import '../../../config-scss/rem-calc.scss';
+@import "../../../config-scss/animation.scss";
+
+:host{
+    header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        padding: rem-calc(40) 0;
+    }
+
+    #links-fixos{
+        display: flex;
+        flex-direction: column;
+        width: auto;
+        position:fixed;
+        top:40vh;
+    }
+
+    #links-fixos a {
+        margin: 5px;
+    }
+
+    #links-fixos img {
+        width: 40px;
+        height: 30px;
+        margin: 5px;
+    }
+
+    #links-fixos img:hover {
+        animation: pulse02 0.7s linear;
+    
+    }
+
+    @media screen and (max-width: 440px) {
+        #links-fixos{
+            display: none
+        }
+    }
+}
+
